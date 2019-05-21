@@ -22,6 +22,9 @@ everything else requires only ordinary user privileges.
 
 I assume ~git~ is already installed.
 
+It is also assumed that ~ocaml~ is installed. If not, follow the instructions
+outlined [[https://ocaml.org/docs/install.html][here]] for your OS.
+
 ** opam
 
 The first step is to install ~opam~, the OCaml package manager. (We will also
