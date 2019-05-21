@@ -161,18 +161,18 @@ overview.
 If the installation worked successfully, this should produce output that
 looks like this:
 #+BEGIN_SRC bash
-  Done: 87/89 (jobs: 1)File "expect_test_example.ml", line 1, characters 0-0:
-  diff (internal) (exit 1)
+  Done: 17/19 (jobs: 1)File "expect_test_example.ml", line 1, characters 0-0:
+          diff (internal) (exit 1)
   (cd _build/default && /usr/bin/diff -u expect_test_example.ml expect_test_example.ml.corrected)
-  --- expect_test_example.ml      2018-02-26 01:37:02.000000000 +0000
-  +++ expect_test_example.ml.corrected    2018-02-26 04:36:48.800103324 +0000
+  --- expect_test_example.ml	2019-05-20 23:31:59.983288516 -0400
+  +++ expect_test_example.ml.corrected	2019-05-20 23:32:02.883288447 -0400
   @@ -2,5 +2,5 @@
 
    let%expect_test _ =
      let () = printf "foo" in
   -  [%expect {| bar |}]
   +  [%expect {| foo |}]
-   ;;
+  ;;
 #+END_SRC
 
 This indicates a failed test because there is a diff between what we said the
