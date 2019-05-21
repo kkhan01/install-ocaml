@@ -34,7 +34,15 @@ If you already have ~opam~ installed, you can skip this step.
 
 *** This invocation will vary based on your system.
 
-On Debian:
+**** On Arch or Arch based distros:
+Using an AUR helper like [[https://github.com/Jguer/yay][yay]], we can run:
+
+#+BEGIN_SRC bash
+yay -S opam
+yay -S m4
+#+END_SRC
+
+**** On Debian:
 
 #+BEGIN_SRC bash
   apt-get install -y m4
@@ -48,7 +56,7 @@ At present, it is necessary to download the binary directly:
 
 and put it somewhere in your PATH with the name ~opam~.
 
-On Ubuntu:
+**** On Ubuntu:
 
 #+BEGIN_SRC bash
   add-apt-repository ppa:avsm/ppa
@@ -58,7 +66,7 @@ On Ubuntu:
 
 For WSL, you should also ~apt install gcc, binutils-dev, make and pkg-config~
 
-On macOS (using Homebrew):
+**** On macOS (using Homebrew):
 
 #+BEGIN_SRC bash
   brew install -y opam m4
