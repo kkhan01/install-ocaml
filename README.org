@@ -133,7 +133,7 @@ Next we'll install a set of basic libraries that you'll need for this
 workshop:
 
 #+BEGIN_SRC bash
-  opam install -y async core js_of_ocaml js_of_ocaml-ppx merlin utop ocp-indent
+  opam install -y async core js_of_ocaml js_of_ocaml-ppx merlin utop ocp-indent ppx_jane
 #+END_SRC
 
 * Test your installation
