@@ -22,13 +22,14 @@ everything else requires only ordinary user privileges.
 
 I assume ~git~ is already installed.
 
-It is also assumed that ~ocaml~ is installed. If not, follow the instructions
-outlined [[https://ocaml.org/docs/install.html][here]] for your OS.
+It is also assumed that ~ocaml~ is installed. If not, follow the
+instructions outlined [[https://ocaml.org/docs/install.html][here]] for your OS.
 
 ** opam
 
-The first step is to install ~opam~, the OCaml package manager. (We will also
-need ~m4~, a tool used by certain packages to preprocess OCaml code).
+The first step is to install ~opam~, the OCaml package manager. (We
+will also need ~m4~, a tool used by certain packages to preprocess
+OCaml code).
 
 If you already have ~opam~ installed, you can skip this step.
 
@@ -72,8 +73,8 @@ For WSL, you should also ~apt install gcc, binutils-dev, make and pkg-config~
   brew install -y opam m4
 #+END_SRC
 
-Or, if you prefer not to use Homebrew, you can download a binary directly
-(just put it somewhere in your PATH with the name ~opam~):
+Or, if you prefer not to use Homebrew, you can download a binary
+directly (just put it somewhere in your PATH with the name ~opam~):
 
 #+BEGIN_SRC bash
   wget https://github.com/ocaml/opam/releases/download/2.0.3/opam-2.0.3-x86_64-darwin
@@ -81,9 +82,9 @@ Or, if you prefer not to use Homebrew, you can download a binary directly
 
 *** Initialize ~opam~
 
-Next we initialize the ~opam~ installation and pull down the latest OCaml
-compiler. This step will take a little while, because ~opam~ will build the
-OCaml compiler from source.
+Next we initialize the ~opam~ installation and pull down the latest
+OCaml compiler. This step will take a little while, because ~opam~
+will build the OCaml compiler from source.
 
 For WSL, you must also include ~--disable-sandboxing~ with ~opam init~
 
@@ -113,8 +114,9 @@ pick the system one:
 #+END_SRC
 
 Follow the prompts and put ~eval $(opam env)~ in the appropriate
-rcfile for your shell (eg ~~/.bashrc~) to set up paths and so forth. Alternatively,
-you can pass ~-a~ to ~opam init~, and opam will set-up the files for you.
+rcfile for your shell (eg ~~/.bashrc~) to set up paths and so forth.
+Alternatively, you can pass ~-a~ to ~opam init~, and opam will set-up
+the files for you.
 
 *** Update and upgrade
 
@@ -156,9 +158,9 @@ This should print ~Hello, World~.
 
 ** Test that expect-tests work as intended
 
-One pattern that we'll make a lot of use of at the workshop is expect tests.
-If you've never heard of expect tests, check out [[https://blog.janestreet.com/testing-with-expectations/][our blog post]] for an
-overview.
+One pattern that we'll make a lot of use of at the workshop is
+expect tests. If you've never heard of expect tests, check out [[https://blog.janestreet.com/testing-with-expectations/][our
+blog post]] for an overview.
 
 ~cd~ to the ~02-expect-tests~ directory in this repo and run this:
 
@@ -166,8 +168,8 @@ overview.
   dune runtest
 #+END_SRC
 
-If the installation worked successfully, this should produce output that
-looks like this:
+If the installation worked successfully, this should produce output
+that looks like this:
 #+BEGIN_SRC bash
   Done: 17/19 (jobs: 1)File "expect_test_example.ml", line 1, characters 0-0:
           diff (internal) (exit 1)
@@ -183,19 +185,20 @@ looks like this:
   ;;
 #+END_SRC
 
-This indicates a failed test because there is a diff between what we said the
-program would output (~bar~), and what it actually output (~foo~).
+This indicates a failed test because there is a diff between what
+we said the program would output (~bar~), and what it actually output
+(~foo~).
 
-If the test is right and the program wrong, you would fix the program. But if
-it's the test that's wrong, accept the diff like so:
+If the test is right and the program wrong, you would fix the
+program. But if it's the test that's wrong, accept the diff like so:
 
 #+BEGIN_SRC bash
   dune promote
 #+END_SRC
 
 This overwrites ~expect_test_example.ml~ with a corrected version that
-expects the output that the program actually produced in the previous run.
-Running the tests again will result in them passing:
+expects the output that the program actually produced in the previous
+run. Running the tests again will result in them passing:
 
 #+BEGIN_SRC bash
   dune runtest # no output
@@ -210,22 +213,26 @@ Running the tests again will result in them passing:
   opam user-setup install
 #+END_SRC
 
-will set up vim and/or emacs (whichever ones you have installed) with syntax
-highlighting, indentation, go-to-definition and printing the types of
-expressions.
+will set up vim and/or emacs (whichever ones you have installed)
+with syntax highlighting, indentation, go-to-definition and
+printing the types of expressions.
 
 To learn more, visit [[https://github.com/OCamlPro/opam-user-setup]].
 
 ** Visual Studio Code
 
 We recommend the [[https://github.com/reasonml-editor/vscode-reasonml][vscode-reasonml]] plugin.
-Note that on WSL, it's not presently possible to link merlin from WSL with VS Code running natively.
+
+Note that on WSL, it's not presently possible to link merlin from
+WSL with VS Code running natively.
 
 * Troubleshooting
 
 ** Error: No inline tests backend found
 
-This is probably because you have an older version of ~core~ installed. To reinstall:
+This is probably because you have an older version of ~core~
+installed before getting a version of ~dune~ that supported inline
+tests. To reinstall:
 
 #+BEGIN_SRC bash
   opam update -uy
