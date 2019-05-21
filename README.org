@@ -12,6 +12,7 @@ These instructions have been tested on
 - Fedora 29
 - Ubuntu 16.04.6 LTS
 - Windows 10 1810 with Ubuntu 18.04.2 LTS
+- Manjaro 18.0.4 Illyria
 
 They *should* work on other versions of macOS and mainstream Linux
 distributions.
