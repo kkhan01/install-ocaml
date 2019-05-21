@@ -219,6 +219,15 @@ printing the types of expressions.
 
 To learn more, visit [[https://github.com/OCamlPro/opam-user-setup]].
 
+One should also look into various opam packages like:
+
+- tuareg
+- merlin
+- ocp-indent
+- utop
+
+and various linters such as =flycheck-ocaml=.
+
 ** Visual Studio Code
 
 We recommend the [[https://github.com/reasonml-editor/vscode-reasonml][vscode-reasonml]] plugin.
